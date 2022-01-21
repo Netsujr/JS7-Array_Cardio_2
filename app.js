@@ -17,7 +17,6 @@ const comments = [
 
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
-// Array.prototype.every() // is everyone 19 or older?
 const over19 = people.some(person => {
   const today = new Date().getFullYear();
   return today - person.year >= 19;
@@ -26,12 +25,24 @@ const over19 = people.some(person => {
 // console.log(over19);
 // console.log({over19}); //adding curly brackets also gives you name of var
 
+
+// -------------------------------------------------------------------------------------------------------
+// Array.prototype.every() // is everyone 19 or older?
+
+const over19s = people.every(person => {
+  const today = new Date().getFullYear();
+  return today - person.year >= 19;
+});
+// console.log(over19s);
+
 // -------------------------------------------------------------------------------------------------------
 
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
 // find the comment with the ID of 823423
 
+const specialComment = comments.find(comment => (comment.id === 823423));
+console.log(specialComment);
 
 
 // -------------------------------------------------------------------------------------------------------
