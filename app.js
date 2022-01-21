@@ -51,12 +51,13 @@ const specialComment = comments.find(comment => (comment.id === 823423));
 // delete the comment with the ID of 823423
 
 const commentToDelete = comments.findIndex(comment => (
-  comment.id === 823423
+  comment.id === 823423 //found the index
   ));
-  console.table(comments);
-  comments.splice(commentToDelete, 1);
+  // console.table(comments);
+  comments.splice(commentToDelete, 1); // deleted the index that was found
   // console.table(commentToDelete);
   // console.table(comments);
+
   // or we can do this
 
   const newComments = [
@@ -64,4 +65,4 @@ const commentToDelete = comments.findIndex(comment => (
     ...comments.slice(commentToDelete)
 ];
 
-console.table(newComments);
+// console.table(newComments);
