@@ -42,10 +42,26 @@ const over19s = people.every(person => {
 // find the comment with the ID of 823423
 
 const specialComment = comments.find(comment => (comment.id === 823423));
-console.log(specialComment);
+// console.log(specialComment);
 
 
 // -------------------------------------------------------------------------------------------------------
 // Array.prototype.findIndex()
 // Find the comment with this ID
 // delete the comment with the ID of 823423
+
+const commentToDelete = comments.findIndex(comment => (
+  comment.id === 823423
+  ));
+  console.table(comments);
+  comments.splice(commentToDelete, 1);
+  // console.table(commentToDelete);
+  // console.table(comments);
+  // or we can do this
+
+  const newComments = [
+    ...comments.slice(0, commentToDelete),
+    ...comments.slice(commentToDelete)
+];
+
+console.table(newComments);
